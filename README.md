@@ -8,6 +8,8 @@ This bot allows you to communicate with your character.ai bots inside a discord 
 - Easy setup!
 - Support via discord server.
 
+I will be adding some more fixes and changes in the near future!
+
 
 ## Getting the required data
 Before the installation we need to get some tokens and IDs for the bot to function.
