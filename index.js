@@ -1,8 +1,7 @@
 const { Client, GatewayIntentBits, ActivityType } = require("discord.js")
-// const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MESSAGE_REACTIONS] });
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.MessageContent, GatewayIntentBits.GuildMessages] });
 
-const botConfig = require("./botConfig.json")
+const botConfig = require("./botConfig.json") // Specifies the config file
 const CharacterAI = require('node_characterai');
 const characterAI = new CharacterAI();
 
