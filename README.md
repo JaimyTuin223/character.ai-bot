@@ -1,15 +1,6 @@
-
-# Project Title
-
-A brief description of what this project does and who it's for
-
-
 # Character.ai discord bot
 
 This bot allows you to communicate with your character.ai bots inside a discord chat, making use of [node_characterai](https://github.com/realcoloride/node_characterai).
-
-
-
 
 ## Features
 
@@ -32,7 +23,17 @@ This ID will be used to connect to your character AI chat bot.
 Go to the Character.AI website, create or open a bot chat and copy the id found at the end of the URL. (https://beta.character.ai/chat?char= **chatID**)
 
 #### Character.ai auth token.
-This auth token is how you use your account via the code. This token can be found by going to ...
+This auth token is how you use your account via the code. (You can also use a guest account, but this will include limitations)
+
+1. Open the [Character.AI website](https://beta.character.ai) in your browser.
+2. Open the developer tools. (F12, Ctrl+Shift+I, or Cmd+J)
+3. Go to the Application tab.
+4. Go to the Storage section and click on Local Storage
+5. Look for the @@auth0spajs@@:: .. 
+6. Open the body with the arrows and copy the access token
+
+#### Can't find the data?
+If you can't find the data using the steps above, feel free to watch the installation on my youtube video. (coming soon.)
 
 ## Installation
 
