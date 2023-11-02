@@ -21,7 +21,7 @@ client.on("messageCreate", async message => {
 
     // Stop the code if the bot isn't mentioned (@ or ping reply)
     if (!message.mentions.users.first()) return
-    if (message.mentions.users.first().id !== client.user.id) return console.log("Exchange stopped")
+    if (message.mentions.users.first().id !== client.user.id) return 
 
     // Specifify the message sent to the character.ai chat.
     var msgText = message.content.split(" ").slice(1).join(" ");
