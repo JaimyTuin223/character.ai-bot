@@ -1,4 +1,9 @@
 
+# Project Title
+
+A brief description of what this project does and who it's for
+
+
 # Character.ai discord bot
 
 This bot allows you to communicate with your character.ai bots inside a discord chat, making use of [node_characterai](https://github.com/realcoloride/node_characterai).
@@ -45,7 +50,8 @@ Below is everything that needs to be set in the `botConfig.json` file. This uses
 {
     "token": "botToken",
     "characterID": "ChatID",
-    "authToken": "userAccToken"
+    "authToken": "userAccToken",
+    "chatID": "discordChannelID"
 }
 ```
 ## Deployment
@@ -55,4 +61,15 @@ To deploy this project run:
 ```bash
   npm start
 ```
+
+
+## Screenshots
+
+![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here) 
+
+
+
+## Support
+
+For support join the [Ginger Production discord server](https://discord.gg/8KxqWAKCPe). 
 
