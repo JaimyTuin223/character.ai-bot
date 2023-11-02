@@ -33,7 +33,7 @@ This auth token is how you use your account via the code. (You can also use a gu
 6. Open the body with the arrows and copy the access token
 
 #### Can't find the data?
-If you can't find the data using the steps above, feel free to watch the installation on my youtube video. (coming soon.)
+If you can't find the data using the steps above, feel free to watch the installation on my [youtube video](https://www.youtube.com/watch?v=opzsBka7vkk)
 
 ## Installation
 
