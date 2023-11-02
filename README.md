@@ -47,7 +47,7 @@ First we install all packages by running the command below in the command line.
 
 #### 2. botConfig.json
 Below is everything that needs to be set in the `botConfig.json` file. This uses the data we collected at "Getting the required data".
-```bash
+```json
 {
     "token": "botToken",
     "characterID": "ChatID",
