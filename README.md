@@ -66,7 +66,7 @@ To deploy this project run:
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here) 
+![App Screenshot](https://i.imgur.com/FPlt8Q8.png) 
 
 
 
