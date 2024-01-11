@@ -1,6 +1,7 @@
 {
     "token": "Discord_BotToken",
     "characterID": "Character.ai_ChatID",
-    "authToken": "Character.ai_AuthToken",
+    "authToken": "Character.ai access_token",
+    "idToken": "Character.ai id_token",
     "chatID": "Discord_ChannelID"
 }

@@ -1,7 +1,7 @@
 {
     "dependencies": {
         "discord.js": "^14.13.0",
-        "node_characterai": "^1.2.1",
+        "node_characterai": "^1.2.4",
         "nodemon": "^2.0.16",
         "semver": "^7.5.4",
         "undici": "^5.27.0"

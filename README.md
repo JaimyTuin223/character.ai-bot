@@ -24,15 +24,15 @@ This ID will be used to connect to your character AI chat bot.
 
 Go to the Character.AI website, create or open a bot chat and copy the id found at the end of the URL. (https://beta.character.ai/chat?char= **chatID**)
 
-#### Character.ai auth token.
-This auth token is how you use your account via the code. (You can also use a guest account, but this will include limitations)
+#### Character.ai access and id token.
+This access token is how you use your account via the code. (You can also use a guest account, but this will include limitations)
 
 1. Open the [Character.AI website](https://beta.character.ai) in your browser.
 2. Open the developer tools. (F12, Ctrl+Shift+I, or Cmd+J)
 3. Go to the Application tab.
 4. Go to the Storage section and click on Local Storage
 5. Look for the @@auth0spajs@@:: .. 
-6. Open the body with the arrows and copy the access token
+6. Open the body with the arrows and copy the access_token and the id_token
 
 #### Can't find the data?
 If you can't find the data using the steps above, feel free to watch the installation on my [youtube video](https://www.youtube.com/watch?v=opzsBka7vkk)
@@ -52,8 +52,9 @@ Below is everything that needs to be set in the `botConfig.json` file. This uses
 ```json
 {
     "token": "botToken",
-    "characterID": "ChatID",
-    "authToken": "userAccToken",
+    "characterID": "character.ai ChatID",
+    "authToken": "character.ai access_token",
+    "idToken": "character.ai id_token",
     "chatID": "discordChannelID"
 }
 ```
