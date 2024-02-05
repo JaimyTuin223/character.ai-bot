@@ -31,11 +31,11 @@ This access token is how you use your account via the code. (You can also use a 
 2. Open the developer tools. (F12, Ctrl+Shift+I, or Cmd+J)
 3. Go to the Application tab.
 4. Go to the Storage section and click on Local Storage
-5. Look for the @@auth0spajs@@:: .. 
-6. Open the body with the arrows and copy the access_token and the id_token
+5. Select https://beta.character.ai
+6. In the key list search for char_token and copy the code in the value field. (value: "code")
 
-#### Can't find the data?
-If you can't find the data using the steps above, feel free to watch the installation on my [youtube video](https://www.youtube.com/watch?v=opzsBka7vkk)
+#### Help, I need a tutorial
+If you need a setup tutorial, feel free to watch the installation on my [youtube video](https://www.youtube.com/watch?v=opzsBka7vkk) (NOTE: This video has the outdated auth method)
 
 ## Installation
 
@@ -53,8 +53,7 @@ Below is everything that needs to be set in the `botConfig.json` file. This uses
 {
     "token": "botToken",
     "characterID": "character.ai ChatID",
-    "authToken": "character.ai access_token",
-    "idToken": "character.ai id_token",
+    "authToken": "character.ai char_token",
     "chatID": "discordChannelID"
 }
 ```
