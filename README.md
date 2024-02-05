@@ -24,7 +24,7 @@ This ID will be used to connect to your character AI chat bot.
 
 Go to the Character.AI website, create or open a bot chat and copy the id found at the end of the URL. (https://beta.character.ai/chat?char= **chatID**)
 
-#### Character.ai access and id token.
+#### Character.ai access token.
 This access token is how you use your account via the code. (You can also use a guest account, but this will include limitations)
 
 1. Open the [Character.AI website](https://beta.character.ai) in your browser.
