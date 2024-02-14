@@ -74,5 +74,5 @@ To deploy this project run:
 
 ## Support
 
-For support join the [Ginger Production discord server](https://discord.gg/8KxqWAKCPe). 
+For support join the [Ginger Productions discord server](https://discord.gg/8KxqWAKCPe). 
 
