@@ -64,7 +64,10 @@ To deploy this project run:
 ```bash
   npm start
 ```
-
+or
+```bash
+  node index
+```
 
 ## Screenshots
 
