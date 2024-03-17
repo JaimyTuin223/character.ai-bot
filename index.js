@@ -25,6 +25,7 @@ client.on("messageCreate", async message => {
 
     // Specifify the message sent to the character.ai chat.
     var msgText = message.content.split(" ").slice(1).join(" ");
+    // Replace the 1 above with a 0 if you don't @mention the bot infront of your msgs (Reply ping / Removed the mention required)
 
     // Displays the "YourBotsName is typing.." text in the discord channel.
     message.channel.sendTyping();
