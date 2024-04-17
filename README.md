@@ -69,6 +69,9 @@ or
   node index
 ```
 
+## Known issues.
+If you used this code before the new authentication method, please run `npm i node_characterai` in your console after updating the code. This command while update the node_characterai module.
+
 ## Screenshots
 
 ![App Screenshot](https://i.imgur.com/mCjH1Kw.png)
