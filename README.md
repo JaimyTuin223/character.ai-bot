@@ -27,11 +27,11 @@ Go to the Character.AI website, create or open a bot chat and copy the id found 
 #### Character.ai access token.
 This access token is how you use your account via the code. (You can also use a guest account, but this will include limitations)
 
-1. Open the [Character.AI website](https://beta.character.ai) in your browser.
+1. Go to https://old.character.ai in your browser. 
 2. Open the developer tools. (F12, Ctrl+Shift+I, or Cmd+J)
 3. Go to the Application tab.
 4. Go to the Storage section and click on Local Storage
-5. Select https://beta.character.ai
+5. Select https://old.character.ai
 6. In the key list search for char_token and copy the code in the value field. (value: "code")
 
 #### Help, I need a tutorial
