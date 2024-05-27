@@ -107,7 +107,7 @@ client.on("interactionCreate", async interaction => {
 
         try {
 
-            await slashCommand.execute(client, interaction); // Try to execute the command
+            await slashCommand.execute(client, interaction, characterAI); // Try to execute the command
 
         } catch (err) { // Catch if something goes wrong, and if so, return an error to the user.
             await interaction.reply({ content: `An error has occured. ${err}`, ephemeral: true });

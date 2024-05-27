@@ -1,10 +1,6 @@
 const { SlashCommandBuilder, PermissionFlagsBits, EmbedBuilder } = require('discord.js');
 const botConfig = require('../botConfig.json') // Used to import the required C.AI tokens.
 
-// Define the C.AI module
-const CharacterAI = require('node_characterai');
-const characterAI = new CharacterAI();
-
 module.exports = {
 
     data: new SlashCommandBuilder() // The slashCommandBuilder feature from Discord.JS, the lines below are to set data for discord to handle (Name, Desc, options, etc.)
@@ -16,7 +12,7 @@ module.exports = {
                 .setRequired(true)
             ),
 
-    async execute(client, interaction) {
+    async execute(client, interaction, characterAI) {
         const prompt = interaction.options.getString('prompt') // Receive the user input
         if (!prompt) return interaction.reply({ content: `No prompt submitted.`, ephemeral: true }) // If there's no prompt, stop the command and reply to the user.
 
