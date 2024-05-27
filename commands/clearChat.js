@@ -1,7 +1,5 @@
 const { SlashCommandBuilder, PermissionFlagsBits, EmbedBuilder } = require('discord.js');
 const botConfig = require('../botConfig.json')
-const CharacterAI = require('node_characterai');
-const characterAI = new CharacterAI();
 
 module.exports = {
 
@@ -10,12 +8,12 @@ module.exports = {
         .setDescription('Saves and starts a new chat with your character.')
         .setDefaultMemberPermissions(PermissionFlagsBits.ManageChannels), // User needs the manage channels permission to be able to use this command
 
-    async execute(client, interaction) {
+    async execute(client, interaction, characterAI) {
  
         try {
 
             if (!characterAI.isAuthenticated()) { // Check if connection is up and authenticated
-                await characterAI.authenticateWithToken(botConfig.authToken); // If the connection isn't up, the start the connection and authenticate it
+                return interaction.reply(`A chat must be active to clear it.`) // If the chat isn't active, return a warning to the user
             }
 
             // Get the chat from the character
