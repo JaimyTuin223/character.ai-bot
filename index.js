@@ -29,10 +29,7 @@ client.once("ready", async () => {
     console.log(`${client.user.username} is online.`); // Log it in the console.
     client.user.setPresence({ activities: [{ name: `Character.ai bot made by @jaimytuin`, type: ActivityType.Playing }], status: 'online' }) // Set a activity.
 
-    let refresh = false // Set this to true when you want to refresh slash commands (e.g. after adding one or changing it's name / perms)
-
     const rest = new REST({ version: '10' }).setToken(botConfig.token);
-    if (refresh == true) {
         (async () => {
             try {
                 console.log(`Started refreshing application (/) commands.`)
@@ -47,7 +44,6 @@ client.once("ready", async () => {
                 console.error(error)
             }
         })();
-    }
 });
 
 client.on("messageCreate", async message => {
