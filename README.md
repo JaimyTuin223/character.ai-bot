@@ -33,12 +33,14 @@ Go to the Character.AI website, create or open a bot chat and copy the id found 
 #### Character.ai access token.
 This access token is how you use your account via the code. (You can also use a guest account, but this will include limitations)
 
-1. Go to https://old.character.ai in your browser. 
+1. Go to https://character.ai/ in your browser. 
 2. Open the developer tools. (F12, Ctrl+Shift+I, or Cmd+J)
-3. Go to the Application tab.
-4. Go to the Storage section and click on Local Storage
-5. Select https://old.character.ai
-6. In the key list search for char_token and copy the code in the value field. (value: "code")
+3. Go to the `Network` tab.
+4. Set the type to `All`. (Positioned below the Filter bar)
+5. Refresh the page and go to a AI character chat.
+6. Find and select a request with a random string of characters as it name.
+7. Copy the value behind token Authorization (`Token <copy this code>`)
+![Token tutorial](https://spud.jaimytuin.com/media/projectShowcase/Cai_token_tutorial.png)
 
 #### Help, I need a tutorial
 If you need a setup tutorial, feel free to watch the installation on my [youtube video](https://www.youtube.com/watch?v=opzsBka7vkk) (NOTE: This video has the outdated auth method)
@@ -87,4 +89,3 @@ If you used this code before the new authentication method, please run `npm i no
 ## Support
 
 For support join the [Ginger Productions discord server](https://discord.gg/8KxqWAKCPe). 
-
