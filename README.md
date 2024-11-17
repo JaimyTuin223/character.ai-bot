@@ -40,7 +40,7 @@ This access token is how you use your account via the code. (You can also use a 
 5. Refresh the page and go to a AI character chat.
 6. Find and select a request with a random string of characters as it name.
 7. Copy the value behind token Authorization (`Token <copy this code>`)
-![Token tutorial](https://spud.jaimytuin.com/media/projectShowcase/Cai_token_tutorial.png)
+![Token tutorial](https://spud.jaimytuin.com/media/projectShowcase/CAI_token_tutorial.png)
 
 #### Help, I need a tutorial
 If you need a setup tutorial, feel free to watch the installation on my [youtube video](https://www.youtube.com/watch?v=opzsBka7vkk) (NOTE: This video has the outdated auth method)
