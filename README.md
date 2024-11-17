@@ -38,7 +38,7 @@ This access token is how you use your account via the code. (You can also use a 
 3. Go to the `Network` tab.
 4. Set the type to `All`. (Positioned below the Filter bar)
 5. Refresh the page and go to a AI character chat.
-6. Find and select a request with a random string of characters as it name.
+6. Find and select a request with `Resurrect` as it name.
 7. Copy the value behind token Authorization (`Token <copy this code>`)
 ![Token tutorial](https://spud.jaimytuin.com/media/projectShowcase/CAI_token_tutorial.png)
 
