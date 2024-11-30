@@ -28,7 +28,7 @@ Head over to the [Discord developer portal](https://discord.com/developers/appli
 #### Character.ai chatID.
 This ID will be used to connect to your character AI chat bot. 
 
-Go to the Character.AI website, create or open a bot chat and copy the id found at the end of the URL. (https://beta.character.ai/chat?char= **chatID**)
+Go to the Character.AI website, create or open a bot chat and copy the id found at the end of the URL. (https://character.ai/chat?char= **chatID**)
 
 #### Character.ai access token.
 This access token is how you use your account via the code. (You can also use a guest account, but this will include limitations)
