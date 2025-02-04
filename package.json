@@ -1,11 +1,11 @@
 {
     "dependencies": {
         "chromium": "^3.0.3",
-        "discord.js": "^14.13.0",
+        "discord.js": "^14.14.1",
         "node_characterai": "^1.2.5",
         "nodemon": "^3.0.3",
-        "semver": "^7.5.4",
-        "undici": "^5.27.0"
+        "semver": "^7.7.1",
+        "undici": "^7.3.0"
     },
     "name": "character.ai",
     "version": "1.2.2",
