@@ -1,3 +1,5 @@
+# ⚠️ This branch is in development and might include not working code.
+
 # Character.ai discord bot
 
 This bot allows you to communicate with your character.ai bots inside a discord chat, making use of [node_characterai](https://github.com/realcoloride/node_characterai).
