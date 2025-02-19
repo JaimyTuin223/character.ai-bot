@@ -1,6 +1,11 @@
 > [!Note]
 > This branch is in development and is very likely to have issues in the code at this point in development.
 
+## Progress
+- [x] Switch to new node_characterai version
+- [x] Basic functionality (Chatting)
+- [ ] SlashCommands
+- [ ] Improved chat initiation
 
 
 # Character.ai discord bot
