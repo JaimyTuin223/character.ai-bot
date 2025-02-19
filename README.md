@@ -1,4 +1,5 @@
-# ⚠️ This branch is in development and might include not working code.
+> [!Note]
+> This branch is in development and might include not working code.
 
 # Character.ai discord bot
 
