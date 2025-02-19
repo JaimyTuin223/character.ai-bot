@@ -1,5 +1,7 @@
 > [!Note]
-> This branch is in development and might include not working code.
+> This branch is in development and is very likely to have issues in the code at this point in development.
+
+
 
 # Character.ai discord bot
 
