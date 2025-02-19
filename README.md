@@ -1,10 +1,19 @@
-# ⚠️ This branch is in development and might include not working code.
-
 # Character.ai discord bot
 
 This bot allows you to communicate with your character.ai bots inside a discord chat, making use of [node_characterai](https://github.com/realcoloride/node_characterai).
 
 This Branch of the bot features a slash command handler and a slash command for restarting the character.ai chat.
+
+> [!Note]
+> This branch is in development and is very likely to have issues in the code at this point in development.
+
+## Progress
+- [x] Switch to new node_characterai version
+- [x] Basic functionality (Chatting)
+- [ ] SlashCommands
+- [ ] Improved chat initiation
+- [ ] Update README.md
+
 
 ## Features
 
