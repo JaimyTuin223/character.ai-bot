@@ -22,14 +22,22 @@ for (const file of commandFiles) {
     client.commands.set(command.data.name, command);
     commands.push(command.data.toJSON());
 
-    console.log(`${command.data.name}.js has loaded.`);
+    console.log(`[Command] - ${command.data.name}.js has loaded.`);
 
 }
 
 // When the bot is "ready":
 client.once("ready", async () => {
     console.log(`${client.user.username} is online.`); // Log it in the console.
-    client.user.setPresence({ activities: [{ name: `Character.ai bot made by @jaimytuin`, type: ActivityType.Playing }], status: 'online' }) // Set a activity.
+
+    // Set activity status
+    client.user.setPresence({
+        activities: [{
+            name: `Chatting with members!`, // The text to display
+            type: ActivityType.Custom // Playing, listening, etc.
+        }],
+        status: 'online' // status (online, idle, etc.)
+    });
 
     // Registering the slash commands to Discord.
     // const rest = new REST({ version: '10' }).setToken(config.token);
@@ -49,8 +57,11 @@ client.once("ready", async () => {
     // })();
 
     characterAI.authenticate(config.authToken) // Initial authentication on startup
-    console.log("Logged in");
+    console.log("Connected to C.ai");
 });
+
+// Global Vars
+client.activeChat = false;
 
 client.on("messageCreate", async message => {
 
@@ -58,14 +69,21 @@ client.on("messageCreate", async message => {
     if (message.author.bot) return;
 
     // Makes it so the bot only runs when the conversation happens in a set discord channel.
-    if (message.channel.id !== config.chatID) return // Change this in botConfig.json OR remove this line if you want it to function in all chats.
+    // if (message.channel.id !== config.chatID) return // Change this in botConfig.json OR remove this line if you want it to function in all chats.
 
-    // Stop the code if the bot isn't mentioned (@ or ping reply) -- If you want to make the bot reply on all messages, remove the 2 lines below.
-    if (!message.mentions.users.first()) return
-    if (message.mentions.users.first().id !== client.user.id) return
+    // Add back code comments
+    
+    let msgText = message.content
+    if (!client.activeChat) {
+        if (!message.mentions.users.first()) return
+        if (message.mentions.users.first().id !== client.user.id) return
 
-    // Specifify the message sent to the character.ai chat.
-    var msgText = message.content.split(" ").slice(1).join(" ");
+        client.activeChat = `${message.channel.id}_${message.author.id}`
+        msgText = message.content.split(" ").slice(1).join(" ");
+    }
+
+    if (!client.activeChat.includes(`${message.channel.id}`)) return
+    // if (message.channel.id !== activeChat) return
 
     // Displays the "YourBotsName is typing.." text in the discord channel.
     message.channel.sendTyping();
@@ -83,38 +101,6 @@ client.on("messageCreate", async message => {
     const aiReponse = await dm.sendMessage(msgText);
     return message.reply(aiReponse.content)
 
-    // const dms = await character.getDMs();
-    // console.log(dms)
-    // https://github.com/realcoloride/node_characterai/tree/2.0?tab=readme-ov-file#installation
-
-    // async function aiMSG() {
-    //     // If the connection isn't authenticated, it authenticates it with the await function.
-    //     if (!characterAI.isAuthenticated()) { 
-    //         await characterAI.authenticateWithToken(botConfig.authToken);
-    //         // To authenticate as a guest use .authenticateAsGuest()
-    //         // To authenticate as a user use .authenticateWithToken(botConfig.authToken, botConfig.idToken)
-    //     }
-
-    //     // Create or Continue in the character.ai chat (Uses the ChatID set in botConfig.json)
-    //     const chat = await characterAI.createOrContinueChat(botConfig.characterID);
-
-    //     // Send a message
-    //     const response = await chat.sendAndAwaitResponse(`${msgText}`, true);
-
-    //     // Return the retrieved response to the code.
-    //     return response
-    // }
-
-    // try {
-
-    //     let response = await aiMSG() // Get the response data by running the aiMSG() function.
-    //     message.reply(`${response.text}`) // Send the character.ai bot reponse in the discord channel.
-
-    // } catch (error) { // This runs if something goes wrong trying to send the reponse.
-    //     console.log(error); // This logs it in the console.
-    //     // return message.reply("There was a problem handling the command."); // This sends a msg in the discord channel.
-    // }
-
 });
 
 // Interaction command handling
@@ -128,7 +114,6 @@ client.on("interactionCreate", async interaction => {
         } catch (err) { // Catch if something goes wrong, and if so, return an error to the user.
             await interaction.reply({ content: `An error has occured. ${err}`, ephemeral: true });
         }
-
     }
 })
 

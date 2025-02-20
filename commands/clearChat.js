@@ -16,6 +16,8 @@ module.exports = {
 
             return interaction.reply("Cmd disabled")
 
+            // Change to new system and include chat switching
+
             // if (!characterAI.isAuthenticated()) { // Check if connection is up and authenticated
             //     return interaction.reply(`A chat must be active to clear it.`) // If the chat isn't active, return a warning to the user
             // }
