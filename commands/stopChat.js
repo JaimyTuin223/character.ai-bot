@@ -8,11 +8,22 @@ module.exports = {
         .setDescription('Stops the currently ongoing conversation.'),
 
     async execute(client, interaction, characterAI) {
-        const chatOwner = client.activeChat.split('_')[1]
-        if (interaction.user.id !== chatOwner) return interaction.reply(`You can not stop a conversation not started by you.`)
+        let chatOwner;
+        if (client?.activeChat) chatOwner = activeChat.split('_')[1];
 
-        client.activeChat = false
+        // Check if the user has manage server permissions (admin rights)
+        if ((BigInt(interaction?.member?.permissions) & BigInt(0x20)) !== BigInt(0)) {
+            // Has permission
+            client.activeChat = false // Stop the conversation
+            return interaction.reply("Conversation has been stopped.")
 
-        return interaction.reply("Conversation has been stopped.") // Return feedback to the use
+        } else {
+            // Doesn't have permission
+            if (interaction.user.id !== chatOwner) return interaction.reply(`You can not stop a conversation not started by you.`) // Check if the user has started the conversation
+
+            client.activeChat = false // Stop the conversation
+            return interaction.reply("Conversation has been stopped.") // Return feedback to the use
+
+        }
     }
 }

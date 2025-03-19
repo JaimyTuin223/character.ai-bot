@@ -12,21 +12,14 @@ module.exports = {
  
         try {
             if (!characterAI?.token) await characterAI.authenticate(config.authToken); // Authenticate again if the auth has timed out
-            const character = await characterAI.fetchCharacter(config.characterID); // Get character by charID
+            const character = await characterAI.fetchCharacter(client.activeCharacter); // Get character by charID
 
-            return interaction.reply("Cmd disabled")
+            console.log(character)
 
-            // Change to new system and include chat switching
+            return interaction.reply("Command coming soon")
 
-            // if (!characterAI.isAuthenticated()) { // Check if connection is up and authenticated
-            //     return interaction.reply(`A chat must be active to clear it.`) // If the chat isn't active, return a warning to the user
-            // }
-
-            // // Get the chat from the character
-            // const chat = await characterAI.createOrContinueChat(config.characterID);
-            // chat.saveAndStartNewChat() // Start a new chat.
-
-            // return interaction.reply("AI chat has been cleared!") // Return feedback to the user
+            // This command will be used to close the chat and start a fresh new one with the trained data.
+            // Will need to add functionality to load different chats.
 
         } catch (error) { // If something goes wrong:
             return interaction.reply("Something went wrong, chat has not been cleared.") // Return feedback to the user

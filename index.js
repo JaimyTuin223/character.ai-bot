@@ -9,6 +9,11 @@ const characterAI = new CharacterAI();
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord.js')
 
+// Global Vars
+client.activeChat = false;
+client.activeCharacter = '7fHWfxbf3zDzh2N_Z0fY9uXgpx24CyhN1rLAiV2pBlc'; // default character chat ID
+// --
+
 // Stuff for slash commands.
 client.commands = new Collection();
 const commands = [];
@@ -16,14 +21,12 @@ const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith("
 
 // Creates an array with all Slashcommands to use in the register function
 for (const file of commandFiles) {
-
     const command = require(`./commands/${file}`);
 
     client.commands.set(command.data.name, command);
     commands.push(command.data.toJSON());
 
     console.log(`[Command] - ${command.data.name}.js has loaded.`);
-
 }
 
 // When the bot is "ready":
@@ -40,36 +43,30 @@ client.once("ready", async () => {
     });
 
     // Registering the slash commands to Discord.
-    // const rest = new REST({ version: '10' }).setToken(config.token);
-    // (async () => {
-    //     try {
-    //         console.log(`Started refreshing application (/) commands.`)
+    const rest = new REST({ version: '10' }).setToken(config.token);
+    (async () => {
+        try {
+            console.log(`Started refreshing application (/) commands.`)
 
-    //         const data = await rest.put(
-    //             Routes.applicationCommands(client.user.id),
-    //             { body: commands },
-    //         )
+            const data = await rest.put(
+                Routes.applicationCommands(client.user.id),
+                { body: commands },
+            )
 
-    //         console.log(`Successfully reloaded application (/) commands.`)
-    //     } catch (error) {
-    //         console.error(error)
-    //     }
-    // })();
+            console.log(`Successfully reloaded application (/) commands.`)
+        } catch (error) {
+            console.error(error)
+        }
+    })();
 
     characterAI.authenticate(config.authToken) // Initial authentication on startup
     console.log("Connected to C.ai");
 });
 
-// Global Vars
-client.activeChat = false;
-
 client.on("messageCreate", async message => {
 
     // If the code retrieves a message from a bot user, it stops te code.
     if (message.author.bot) return;
-
-    // Makes it so the bot only runs when the conversation happens in a set discord channel.
-    // if (message.channel.id !== config.chatID) return // Change this in botConfig.json OR remove this line if you want it to function in all chats.
 
     // Add back code comments
     
@@ -90,7 +87,7 @@ client.on("messageCreate", async message => {
 
     // If no token its not auth'd
     if (!characterAI?.token) await characterAI.authenticate(config.authToken); // Authenticate again if the auth has timed out
-    const character = await characterAI.fetchCharacter(config.characterID); // Get character by charID
+    const character = await characterAI.fetchCharacter(client.activeCharacter); // Get character by charID
 
     // Add the function to switch characters, maybe with a Client Variable that includes the current charID
 
@@ -100,7 +97,6 @@ client.on("messageCreate", async message => {
     const dm = await character.DM(); // Get the main conversation of the character
     const aiReponse = await dm.sendMessage(msgText);
     return message.reply(aiReponse.content)
-
 });
 
 // Interaction command handling
