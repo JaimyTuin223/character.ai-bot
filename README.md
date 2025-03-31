@@ -41,7 +41,7 @@ This acccess token will be used to authenticate the requests used by the code.
 5. Find the `HTTP_AUTHORIZATION` key and copy the token value.
 - Image example coming soon
 
-### Character & Chat ID
+### Character ID
 Coming soon
     
 ## Deployment
