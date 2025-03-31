@@ -13,15 +13,13 @@ module.exports = {
         try {
             if (!characterAI?.token) await characterAI.authenticate(config.authToken); // Authenticate again if the auth has timed out
             const character = await characterAI.fetchCharacter(client.activeCharacter); // Get character by charID
+            
+            await character.createDM(false) // Creates a new dm, without the AI replying
 
-            console.log(character)
-
-            return interaction.reply("Command coming soon")
-
-            // This command will be used to close the chat and start a fresh new one with the trained data.
-            // Will need to add functionality to load different chats.
+            return interaction.reply("Messages have been saved and a new DM has been opened.")
 
         } catch (error) { // If something goes wrong:
+            console.log(error)
             return interaction.reply("Something went wrong, chat has not been cleared.") // Return feedback to the user
         }
     }
