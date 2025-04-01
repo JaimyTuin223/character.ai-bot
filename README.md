@@ -6,11 +6,10 @@ This bot allows you to communicate with your character.ai bots inside a discord 
 > This branch is in development and is very likely to have issues in the code at this point in development.
 
 ## V2 Progress
-- [x] Switch to new node_characterai version
+- [x] Switch to new `node_characterai` version
 - [x] Basic functionality (Chatting)
 - [x] Improved chat initiation
-- [ ] More slashCommands
-- [ ] Remake README.md
+- [x] SlashCommands (With handler)
 - [ ] Calling
 
 ## Code setup
@@ -25,9 +24,11 @@ Installing the correct packages can be done with the following npm command:
 ### Bot token
 Make sure to create a new file named `config.json` in the main file path of your project! Here you can store your bot token for the code to use.
 ```json
-  {
-    "token": "Bot token here"
-  }
+ {
+    "token": "Discord bot token",
+    "authToken": "C.ai Access token",
+    "defaultCharacter": "C.ai Character ID"
+}
 ```
 The `.gitignore` file can be removed from your project folder.
 
@@ -42,7 +43,9 @@ This acccess token will be used to authenticate the requests used by the code.
 - Image example coming soon
 
 ### Character ID
-Coming soon
+This replaces the old chat ID value, but is still retrieved the same, simply navigate to your character and copy the value behind `/chat/`.
+![image](https://github.com/user-attachments/assets/84e02e2e-332f-42a7-8dc6-5f0c5e8c2c78)
+
     
 ## Deployment
 
