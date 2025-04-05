@@ -4,13 +4,10 @@ This bot allows you to communicate with your character.ai bots inside a discord 
 
 > [!Note]
 > This branch is in development and is very likely to have issues in the code at this point in development.
-
-## V2 Progress
-- [x] Switch to new `node_characterai` version
-- [x] Basic functionality (Chatting)
-- [x] Improved chat initiation
-- [x] SlashCommands (With handler)
-- [ ] Calling
+> 
+> ### Future plans
+> - [ ] Image generation
+> - [ ] Calling
 
 ## Code setup
 ### Node modules
