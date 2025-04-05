@@ -3,6 +3,13 @@
 This bot allows you to communicate with your character.ai bots inside a discord chat, making use of [node_characterai](https://github.com/realcoloride/node_characterai).
 Check the Branches section found below for more bot functionality than the base version!
 
+> [!Warning]
+> `Character.ai` has changed it's authentication method and broke the bot code.<br>
+> Please use the new [C.ai bot v2](https://github.com/JaimyTuin223/character.ai-bot/tree/C.ai-bot-v2), this version is still functional.
+>
+> V2 will soon replace this branch, along with this change I'm planning on making a new YouTube video for it.
+
+
 ## Features
 
 - Easily chatting with a custom character.ai bot.
@@ -10,11 +17,6 @@ Check the Branches section found below for more bot functionality than the base 
 - Support via discord server.
 
 I will be adding some more fixes and changes in the near future!
-
-## Branches
-Other versions of the bot featuring modified or new content / features!
-- [AI Image generation](https://github.com/JaimyTuin223/character.ai-bot/tree/image-generation) (AI image generation, AI chat restarting and Slash command handler)
-- [Slash command handler](https://github.com/JaimyTuin223/character.ai-bot/tree/slash-command-handler) (AI chat restarting and Slash command handler
 
 
 ## Getting the required data
