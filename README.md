@@ -38,9 +38,12 @@ This acccess token will be used to authenticate the requests used by the code.
 1. Go to https://character.ai/ in your browser.
 2. Open the developer tools. (`F12`, `Ctrl+Shift+I`, or `Cmd+J`)
 3. Go to the `Application` tab.
-4. Go to `Storage` and select `Local storage`.
-5. Find the `HTTP_AUTHORIZATION` key and copy the token value.
-- Image example coming soon
+4. Go to `Storage` and open the `cookies` dropdown.
+5. Inside this dropdown list open `https://character.ai`
+6. Find the `HTTP_AUTHORIZATION` entry and copy the value behind token.
+
+![image](https://github.com/user-attachments/assets/982c18c0-13fe-45d0-8a97-f33dcc19038f)
+
 
 ### Character ID
 This replaces the old chat ID value, but is still retrieved the same, simply navigate to your character and copy the value behind `/chat/`.
