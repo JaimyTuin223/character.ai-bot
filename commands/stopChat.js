@@ -23,7 +23,6 @@ module.exports = {
 
             client.activeChat = false // Stop the conversation
             return interaction.reply("Conversation has been stopped.") // Return feedback to the use
-
         }
     }
 }

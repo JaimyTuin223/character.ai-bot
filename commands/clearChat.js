@@ -17,7 +17,6 @@ module.exports = {
             await character.createDM(false) // Creates a new dm, without the AI replying
 
             return interaction.reply("Messages have been saved and a new DM has been opened.")
-
         } catch (error) { // If something goes wrong:
             console.log(error)
             return interaction.reply("Something went wrong, chat has not been cleared.") // Return feedback to the user

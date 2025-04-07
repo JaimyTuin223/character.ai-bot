@@ -11,7 +11,7 @@ const { Routes } = require('discord.js')
 
 // Global Vars
 client.activeChat = false;
-client.activeCharacter = '7fHWfxbf3zDzh2N_Z0fY9uXgpx24CyhN1rLAiV2pBlc'; // default character chat ID
+client.activeCharacter = config.defaultCharacter; // default character chat ID
 // --
 
 // Stuff for slash commands.
@@ -65,10 +65,12 @@ client.once("ready", async () => {
 
 client.on("messageCreate", async message => {
 
-    // If the code retrieves a message from a bot user, it stops te code.
+    // If the code retrieves a message from a bot user, it stops te code. (Remove if you want the bot to interact with other bots)
     if (message.author.bot) return;
 
-    // Add back code comments
+    // If the above line is removed, make sure you uncomment the line below! This will make sure the bot doesn't reply on itself.
+    // if (message.author.id == client.user.id) return;
+
     
     let msgText = message.content
     if (!client.activeChat) {
@@ -80,7 +82,6 @@ client.on("messageCreate", async message => {
     }
 
     if (!client.activeChat.includes(`${message.channel.id}`)) return
-    // if (message.channel.id !== activeChat) return
 
     // Displays the "YourBotsName is typing.." text in the discord channel.
     message.channel.sendTyping();
@@ -88,11 +89,6 @@ client.on("messageCreate", async message => {
     // If no token its not auth'd
     if (!characterAI?.token) await characterAI.authenticate(config.authToken); // Authenticate again if the auth has timed out
     const character = await characterAI.fetchCharacter(client.activeCharacter); // Get character by charID
-
-    // Add the function to switch characters, maybe with a Client Variable that includes the current charID
-
-    // Call https://github.com/realcoloride/node_characterai/tree/2.0?tab=readme-ov-file#calling-characters
-    // Add hop in call msg detection, ai will need to be trained on it
 
     const dm = await character.DM(); // Get the main conversation of the character
     const aiReponse = await dm.sendMessage(msgText);
