@@ -70,7 +70,6 @@ client.on("messageCreate", async message => {
 
     // If the above line is removed, make sure you uncomment the line below! This will make sure the bot doesn't reply on itself.
     // if (message.author.id == client.user.id) return;
-
     
     let msgText = message.content
     if (!client.activeChat) {
