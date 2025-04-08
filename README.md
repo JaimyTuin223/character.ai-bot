@@ -1,4 +1,4 @@
-# Character.ai discord bot
+# Character.ai discord bot (v2)
 
 This bot allows you to communicate with your character.ai bots inside a discord chat, making use of [node_characterai](https://github.com/realcoloride/node_characterai).
 
